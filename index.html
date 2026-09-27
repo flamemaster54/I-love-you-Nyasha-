@@ -6,69 +6,124 @@
 <title>For Nyasha ❤️</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
-body{background:#0a0a0a;color:#fff;overflow-x:hidden;}
-.center{min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px;text-align:center;}
+body{background:#0a0a0a;color:#fff;overflow-x:hidden; position:relative;}
+.screen{min-height:100vh;display:none;align-items:center;justify-content:center;flex-direction:column;padding:25px;text-align:center; position:relative; z-index:2;}
+.screen.active{display:flex!important;}
 #cover h1{font-size:3rem;font-weight:900;letter-spacing:2px;}
 #cover h1 span{color:#ff4d00;}
 #cover p{color:#aaa;margin:15px 0;letter-spacing:2px;text-transform:uppercase;font-size:0.8rem;}
-.heart-btn{margin-top:25px;background:#ff4d00;border:none;color:#fff;padding:16px 40px;border-radius:30px;font-size:1.1rem;font-weight:700;cursor:pointer;animation: pulse 1.5s infinite;}
+.heart-btn{margin-top:25px;background:#ff4d00;border:none;color:#fff;padding:18px 45px;border-radius:30px;font-size:1.2rem;font-weight:700;cursor:pointer;animation: pulse 1.5s infinite; box-shadow: 0 0 20px rgba(255,77,0,0.4); z-index:10;}
 @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
-#main{display:none;padding:20px;}
-.message-box{max-width:650px;margin:30px auto;background:#171717;border-radius:24px;padding:30px;border:1px solid #262626;}
+.message-box{max-width:600px;width:100%;background:#171717;border-radius:24px;padding:35px;border:1px solid #262626; position:relative;}
 .message-box h2{font-size:1.8rem;margin-bottom:15px;}
 .message-box h2 span{color:#ff4d00;}
-.message-box p{color:#ccc;line-height:1.8;margin-bottom:14px;font-size:0.95rem;text-align:left;}
+.message-box p{color:#ddd;line-height:1.9;font-size:1.15rem;text-align:center;}
 .message-box b{color:#fff;}
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px;}
-.pic{height:220px;border-radius:16px;overflow:hidden;background:#1c1c1c;}
-.pic img{width:100%;height:100%;object-fit:cover;}
-.pic.big{grid-column: span 2;height:320px;}
-footer{text-align:center;padding:40px;color:#444;font-size:0.8rem;}
+.next-btn{margin-top:30px;background:transparent;border:1.5px solid #ff4d00;color:#ff4d00;padding:12px 35px;border-radius:30px;font-size:1rem;font-weight:700;cursor:pointer; transition:0.3s;}
+.next-btn:hover{background:#ff4d00;color:#fff;}
+.progress{color:#555; font-size:0.8rem; margin-top:15px; letter-spacing:2px;}
+.flower-corner{position:absolute; font-size:1.8rem; opacity:0.8; pointer-events:none;}
+.flower-corner.tl{top:12px; left:15px;}.flower-corner.tr{top:12px; right:15px;}
+.flower-corner.bl{bottom:12px; left:15px;}.flower-corner.br{bottom:12px; right:15px;}
+.petal{position:fixed; top:-10px; font-size:1.4rem; z-index:1; pointer-events:none; animation: fall linear infinite;}
+@keyframes fall{0%{transform: translateY(-10vh) translateX(0) rotate(0deg); opacity:1;}100%{transform: translateY(110vh) translateX(100px) rotate(720deg); opacity:0;}}
+.flower-border{text-align:center; font-size:1.3rem; letter-spacing:8px; margin: 15px 0; opacity:0.9;}
+footer{text-align:center;padding:20px;color:#444;font-size:0.8rem; margin-top:20px;}
+.small-note{max-width:420px; color:#777; font-size:0.9rem; margin-top:20px; line-height:1.6; font-style:italic;}
 </style>
 </head>
 <body>
+<div id="petals"></div>
 
-<div id="cover" class="center">
+<div id="cover" class="screen active">
+  <span class="flower-corner tl">🌸</span><span class="flower-corner tr">🌷</span>
   <h1>FOR <span>U</span> NYASHA</h1>
-  <p>A Surprise For You</p>
-  <div style="font-size:4rem;margin-top:20px;">💌</div>
-  <h2 style="margin-top:20px;">I got something for you, bbe...</h2>
-  <button class="heart-btn" onclick="openSurprise()">Open It ❤️</button>
+  
+  <div style="font-size:4rem;margin-top:10px;">💌</div>
+ 
+  <h2 style="margin-top:10px; font-size:1.2rem; font-weight:400;">I got something for you, bbe...</h2>
+  <p class="small-note">whenever you are so lonely, sad open this 🌹 — it's made for you</p>
+  <button class="heart-btn" onclick="nextScreen(1)">Open It ❤️</button>
+  <span class="flower-corner bl">🌷</span><span class="flower-corner br">🌸</span>
 </div>
 
-<div id="main">
-  <div style="text-align:center;padding-top:20px;">
-    <h1 style="font-size:2.5rem;font-weight:900;">FOR MY JAWN ❤️</h1>
-    <p style="color:#777;margin-top:5px;">From Flame, with love</p>
-  </div>
-
+<div id="s1" class="screen">
   <div class="message-box">
-    <h2>My Happiness — <span>Nyasha</span></h2>
-    <p><b>Bbe,</b></p>
-    <p>I just wanted you to know how much I love you, for real.</p>
-    <p>It's not just about how fine you are — it's how you make my peace feel peaceful. Since you came in my life, everything hit different. You my calm in the crazy, you my favorite jawn ever.</p>
+    <span class="flower-corner tl">🌸</span><span class="flower-corner tr">🌹</span>
+    <h2>My Happiness — <span>Nyasha</span> 🌷</h2>
+    <p><b>Bbe,</b><br><br>I just wanted you to know how much I love you, for real.</p>
+    <button class="next-btn" onclick="nextScreen(2)">Next 🌸</button>
+    <div class="progress">1 / 6</div>
+    <span class="flower-corner bl">🌷</span><span class="flower-corner br">🌸</span>
+  </div>
+</div>
+
+<div id="s2" class="screen">
+  <div class="message-box">
+    <p>It's not just about how fine you are — it's how you make my peace feel peaceful. Since you came in my life, everything hit different. You my calm in the crazy, you my favorite bbe ever.</p>
+    <button class="next-btn" onclick="nextScreen(3)">Next 🌷</button>
+    <div class="progress">2 / 6</div>
+  </div>
+</div>
+
+<div id="s3" class="screen">
+  <div class="message-box">
     <p>I love how you laugh, how you check me when I'm trippin, how you make the boring days feel like the best days. You ain't just my girl, you my best friend, my blessing.</p>
+    <button class="next-btn" onclick="nextScreen(4)">Next 🌹</button>
+    <div class="progress">3 / 6</div>
+  </div>
+</div>
+
+<div id="s4" class="screen">
+  <div class="message-box">
     <p>I don't need a perfect life, I just need a life with you in it.</p>
+    <button class="next-btn" onclick="nextScreen(5)">Next 💖</button>
+    <div class="progress">4 / 6</div>
+  </div>
+</div>
+
+<div id="s5" class="screen">
+  <div class="message-box">
     <p>I love you more than words in this website can show, but Ima try to show you everyday anyway.</p>
-    <p style="margin-top:20px;"><b>Forever yours,<br>Flame ❤️</b></p>
+    <button class="next-btn" onclick="nextScreen(6)">Next ❤️</button>
+    <div class="progress">5 / 6</div>
   </div>
+</div>
 
-  <div class="gallery">
-    <!-- PUT YOUR PICS HERE: rename your pics to img1.jpg etc -->
-    <div class="pic big"><img src="img1.jpg" onerror="this.src='https://picsum.photos/600/400?random=1'"></div>
-    <div class="pic"><img src="img2.jpg" onerror="this.src='https://picsum.photos/600/400?random=2'"></div>
-    <div class="pic"><img src="img3.jpg" onerror="this.src='https://picsum.photos/600/400?random=3'"></div>
-    <div class="pic big"><img src="img4.jpg" onerror="this.src='https://picsum.photos/600/400?random=4'"></div>
+<div id="s6" class="screen">
+  <div class="message-box">
+    <div class="flower-border">🌸 🌷 🌸</div>
+    <h1 style="font-size:2.2rem;font-weight:900; margin-bottom:10px;">FOR MY BBE ❤️</h1>
+    <p style="color:#777; font-size:0.8rem; letter-spacing:2px; margin-bottom:20px;">FROM FLAME, WITH LOVE 🌹</p>
+    <p style="font-size:1.4rem;"><b>Forever yours,<br>Flame ❤️ 🌹</b></p>
+    <div class="flower-border" style="margin-top:20px;">🌸 🌷 🌹 🌷 🌸</div>
+    <button class="next-btn" onclick="nextScreen(1)" style="margin-top:20px; background:#ff4d00; color:#fff;">Read Again ❤️</button>
+    <div class="progress">6 / 6</div>
   </div>
-
-  <footer> Made with love by Flame for Nyasha — 2026 </footer>
+  <footer> Made with love by Flame for Nyasha — 2026 🌸🌷🌹 </footer>
 </div>
 
 <script>
-function openSurprise(){
-  document.getElementById('cover').style.display='none';
-  document.getElementById('main').style.display='block';
+function nextScreen(n){
+  // hide all
+  var screens = document.querySelectorAll('.screen');
+  for(var i=0;i<screens.length;i++){ screens[i].classList.remove('active'); }
+  // show next
+  var next = document.getElementById('s' + n);
+  if(next){ next.classList.add('active'); }
   window.scrollTo(0,0);
+}
+var flowers = ['🌹','❤️','🌷','💖','🌸','💘','🌺','💝','💐','💗','🪷','💞'];
+var container = document.getElementById('petals');
+for(var i=0; i<22; i++){
+  var petal = document.createElement('div');
+  petal.className = 'petal';
+  petal.innerText = flowers[Math.floor(Math.random()*flowers.length)];
+  petal.style.left = Math.random()*100 + 'vw';
+  petal.style.animationDuration = (Math.random()*6 + 6) + 's';
+  petal.style.animationDelay = (Math.random()*6) + 's';
+  petal.style.fontSize = (Math.random()*1 + 0.9) + 'rem';
+  container.appendChild(petal);
 }
 </script>
 </body>
