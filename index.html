@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Nyasha ❤️</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
+body{background:#0a0a0a;color:#fff;overflow-x:hidden;}
+.center{min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px;text-align:center;}
+#cover h1{font-size:3rem;font-weight:900;letter-spacing:2px;}
+#cover h1 span{color:#ff4d00;}
+#cover p{color:#aaa;margin:15px 0;letter-spacing:2px;text-transform:uppercase;font-size:0.8rem;}
+.heart-btn{margin-top:25px;background:#ff4d00;border:none;color:#fff;padding:16px 40px;border-radius:30px;font-size:1.1rem;font-weight:700;cursor:pointer;animation: pulse 1.5s infinite;}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+#main{display:none;padding:20px;}
+.message-box{max-width:650px;margin:30px auto;background:#171717;border-radius:24px;padding:30px;border:1px solid #262626;}
+.message-box h2{font-size:1.8rem;margin-bottom:15px;}
+.message-box h2 span{color:#ff4d00;}
+.message-box p{color:#ccc;line-height:1.8;margin-bottom:14px;font-size:0.95rem;text-align:left;}
+.message-box b{color:#fff;}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:30px;}
+.pic{height:220px;border-radius:16px;overflow:hidden;background:#1c1c1c;}
+.pic img{width:100%;height:100%;object-fit:cover;}
+.pic.big{grid-column: span 2;height:320px;}
+footer{text-align:center;padding:40px;color:#444;font-size:0.8rem;}
+</style>
+</head>
+<body>
+
+<div id="cover" class="center">
+  <h1>FOR <span>U</span> NYASHA</h1>
+  <p>A Surprise For You</p>
+  <div style="font-size:4rem;margin-top:20px;">💌</div>
+  <h2 style="margin-top:20px;">I got something for you, bbe...</h2>
+  <button class="heart-btn" onclick="openSurprise()">Open It ❤️</button>
+</div>
+
+<div id="main">
+  <div style="text-align:center;padding-top:20px;">
+    <h1 style="font-size:2.5rem;font-weight:900;">FOR MY JAWN ❤️</h1>
+    <p style="color:#777;margin-top:5px;">From Flame, with love</p>
+  </div>
+
+  <div class="message-box">
+    <h2>My Happiness — <span>Nyasha</span></h2>
+    <p><b>Bbe,</b></p>
+    <p>I just wanted you to know how much I love you, for real.</p>
+    <p>It's not just about how fine you are — it's how you make my peace feel peaceful. Since you came in my life, everything hit different. You my calm in the crazy, you my favorite jawn ever.</p>
+    <p>I love how you laugh, how you check me when I'm trippin, how you make the boring days feel like the best days. You ain't just my girl, you my best friend, my blessing.</p>
+    <p>I don't need a perfect life, I just need a life with you in it.</p>
+    <p>I love you more than words in this website can show, but Ima try to show you everyday anyway.</p>
+    <p style="margin-top:20px;"><b>Forever yours,<br>Flame ❤️</b></p>
+  </div>
+
+  <div class="gallery">
+    <!-- PUT YOUR PICS HERE: rename your pics to img1.jpg etc -->
+    <div class="pic big"><img src="img1.jpg" onerror="this.src='https://picsum.photos/600/400?random=1'"></div>
+    <div class="pic"><img src="img2.jpg" onerror="this.src='https://picsum.photos/600/400?random=2'"></div>
+    <div class="pic"><img src="img3.jpg" onerror="this.src='https://picsum.photos/600/400?random=3'"></div>
+    <div class="pic big"><img src="img4.jpg" onerror="this.src='https://picsum.photos/600/400?random=4'"></div>
+  </div>
+
+  <footer> Made with love by Flame for Nyasha — 2026 </footer>
+</div>
+
+<script>
+function openSurprise(){
+  document.getElementById('cover').style.display='none';
+  document.getElementById('main').style.display='block';
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
